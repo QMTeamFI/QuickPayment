@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.marksky.quickpayment"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="13"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.marksky.quickpayment.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.marksky.quickpayment.PrepareRequest"
+            android:label="@string/title_activity_prepare_request"
+            android:parentActivityName="com.marksky.quickpayment.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.marksky.quickpayment.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.marksky.quickpayment.ShowCode"
+            android:label="@string/title_activity_show_code"
+            android:parentActivityName="com.marksky.quickpayment.PrepareRequest$PlaceholderFragment" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.marksky.quickpayment.PrepareRequest$PlaceholderFragment" />
+        </activity>
+        <activity
+            android:name="com.marksky.quickpayment.ReadPayment"
+            android:label="@string/title_activity_read_payment"
+            android:parentActivityName="com.marksky.quickpayment.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.marksky.quickpayment.MainActivity" />
+        </activity>
+    </application>
+
+</manifest>
